@@ -1,10 +1,10 @@
 import './App.css'; 
-import Color from './Colors'; // Correct import from colorBox.js
+import Box from './Box'
 
 function App() {
   return (
     <div className="App">
-      <Color /> 
+      <Box /> 
     </div>
   );
 }
