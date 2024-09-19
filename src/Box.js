@@ -4,19 +4,18 @@ import './Box.css';
 
 class Box extends Component {
     static defaultProps = {
-        allColors: ['purple', 'magenta', 'violet', 'pink', 'blue', 'orange']
     } //sets the default colors
 
     constructor(props){ //initalizes the state with a random color and binds the event handler
         super(props);
-        this.state = {color: choice(props.allColors)}
+        this.state = {color: choice(this.props.colors)}
         this.handleClick = this.handleClick.bind(this);
     }
 
     pickColor(){
         let newColor; // chooses a new color different from the current and sets state
         do {
-            newColor = choice(this.props.allColors); // Assign the result of choice to newColor
+            newColor = choice(this.props.colors); // Assign the result of choice to newColor
         } while (newColor === this.state.color);
         this.setState({color: newColor});
     }
